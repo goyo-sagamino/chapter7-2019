@@ -65,3 +65,5 @@ while True:
 # 温度センサと接続できないうちはこの無限ループを使う
 while True:
     pass
+
+GPIO.cleanup();
