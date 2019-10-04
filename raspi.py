@@ -32,11 +32,11 @@ def on_snapshot(doc_snapshot, changes, read_time):
         led = change.document.to_dict()["led"]
         print(u'LED: {}'.format(led))
         if led == "ON":
-            print "ON"
+            print ("ON")
             # ONにする処理
             GPIO.output(14, GPIO.HIGH)
         elif led == "OFF":
-            print "OFF"
+            print ("OFF")
             # OFFにする処理
             GPIO.output(14, GPIO.LOW)
 
