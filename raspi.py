@@ -66,4 +66,4 @@ while True:
 while True:
     pass
 
-GPIO.cleanup();
+GPIO.cleanup()
