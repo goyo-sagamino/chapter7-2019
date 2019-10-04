@@ -25,17 +25,36 @@
         </div>
         <script>
             // TODO0 ここに設定情報を貼り付ける  
-            
+            var firebaseConfig = {
+			    apiKey: "AIzaSyDUCiM5Bph7opcMkCv1sXcsaj5BHPFVAVU",
+			    authDomain: "thclass-b9a62.firebaseapp.com",
+			    databaseURL: "https://thclass-b9a62.firebaseio.com",
+			    projectId: "thclass-b9a62",
+			    storageBucket: "thclass-b9a62.appspot.com",
+			    messagingSenderId: "931178719444",
+			    appId: "1:931178719444:web:f5da7f4a84c48b91087341",
+			    measurementId: "G-8TCS3RY418"
+  			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			firebase.analytics();
             // データベースの参照を準備
             var ledRef = firebase.firestore().collection('led')
         
             // TODO1 送信ボタンが押された時の処理
             
             $('#led-on').click(function() {
-		    // {led: "ON"}を送信
+		    // {led: "ON"}
+		    	ledRef.add({
+		    		led: "ON"
+		    	});
+		    	$('<p>追加しました<p>').appendTo('#messages');
             });
             $('#led-off').click(function() {
-		    // {led: "OFF"}を送信
+		    	ledRef.add({
+		    		led: "OFF"
+		    	});
+		    	$('<p>追加しました<p>').appendTo('#messages');
             });
 
         </script>
